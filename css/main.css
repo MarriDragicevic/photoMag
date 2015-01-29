@@ -17,9 +17,15 @@ body{
 }
 
 
-/* CHANGE THIS UGLY COLOR WHEN YOU HAVE THE TIME PLEASE
-nav ul li a{
-	color: #000000;
+.pageUrl {
+	margin-top: 10px;
+
 }
 
-*/
+.pageBody{
+	margin-top: 10px;
+}
+
+.sidebox{
+	margin-top: 10px;
+}

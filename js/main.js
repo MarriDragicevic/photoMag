@@ -2,6 +2,8 @@
 
 $(function(){
 
+
+//Click-event between admin-form and  content-list
 	$('.control li').click(function(){
 		$('.control li').addClass('active').not(this).removeClass('active');
 	});
@@ -17,6 +19,8 @@ $(function(){
 		$('.admin-form').show();
 		$('.content-list').hide();
 	});
+//Click-event finished 
+	
 
 
 });

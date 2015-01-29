@@ -58,11 +58,11 @@
 
 
 
-		
+
 	<!--**SIDEBAR**-->
 	
 		<section class="control row">
-			<section class="sidebar col-xs-10 col-sm-8 col-md-3 col-lg-3 col-xs-offset-1 col-sm-offset-2 col-md-offset-0 col-lg-offset-0">
+			<section class="sidebar col-xs-10 col-sm-8 col-md-3 col-lg-3 col-xs-offset-1 col-sm-offset-2 col-md-offset-0 col-lg-offset-1">
 				<section class="panel panel-default">
 					<div class="panel-heading">
 						<h5 class="panel-title"> OPTIONS </h5>
@@ -107,40 +107,34 @@
 		<section class="admin-form col-xs-12 col-sm-12 col-md-7 col-lg-7 col-lg-offset-1"
 			<form class="form-horizontal">
 				<!--Put horizontal before form-group since the row will come automatically and it shall look wow -->
-				<div class="form-group">
-					<div class="col-sm-8 col-sm-offset-2">
-					<!--Håll koll på storleken här marri^ -->
+					<div class="title col-sm-8 col-sm-offset-3 ">
 						<h2> Administer pages </h2>
 						<h5> Here you can edit content. </h5>
 					</div>
-				</div>	
-
-				<!-- Hugos ubersnygga adminform-->
-				<div class="form-group">
-					<label class="col-sm-2 control-label" for="page_title"> Page title: </label>
-					<div class="col-sm-10">
-                		<input type="text" id="page_title" class="form-control" placeholder="Enter page title..." required>
-              		</div>
-            	</div>
-	            <div class="form-group">
-	              <label class="col-sm-2 control-label" for="page_url">Page Url</label>
-	              <div class="col-sm-10">
-	                	<div class="input-group pageUrlGroup">
-		                  <span class="input-group-addon">
+					
+				  <div class="form-group">
+				    	<label for="inputTitle" class="col-sm-2 control-label">Page title: </label>
+				    <div class="col-sm-10">
+				      	<input type="text" class="pageTitle form-control" placeholder="Enter the page title here">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    	<label for="inputUrl" class="col-sm-2 control-label">Page URL: </label>
+				    <div class="col-sm-10">
+				     	<div class="input-group pageUrlGroup">
+		                  <span class="sideBox input-group-addon">
 		                    <input type="checkbox">
 		                  </span>
-		                  <input type="text" id="page_url" class="form-control" placeholder="Enter page url..." disabled>
+		                  <input type="text" class="pageUrl form-control" placeholder="Enter page URL here" disabled>
 	                	</div>
-	              	</div>
-	            </div>
-	            <div class="form-group">
-	              <label class="col-sm-2 control-label" for="page_body">Page Body</label>
+				    </div>
+				  </div>
+				  <div class="form-group">
+	              		<label class="col-sm-2 control-label" for="pageBody">Page Body: </label>
 	              <div class="col-sm-10">
-	                <textarea id="page_body" class="form-control" rows="10" placeholder="Enter page body content..." required></textarea>
+	                <textarea class="pageBody form-control" rows="10" placeholder="Enter the page body here" required></textarea>
 	              </div>
 	            </div>
-
-		<!--Hugos adminform slut-->
 			
 			</form>
 	
