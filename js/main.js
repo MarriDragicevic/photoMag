@@ -7,14 +7,10 @@ $(function(){
 	$('.control').show();
 
 	$('.admin-form').click(function(){
-		console.log("Tjabba marri");
 		$('.content-list').hide();
 
 		$('.admin-form').show();
 	});
-
-
-
 
 });
 
