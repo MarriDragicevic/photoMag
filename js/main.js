@@ -2,15 +2,22 @@
 
 $(function(){
 
-	$('main').children().not('.control').hide();
-	$('.content-list').show();
-	$('.control').show();
+	$('.control li').click(function(){
+		$('.control li').addClass('active').not(this).removeClass('active');
+	});
 
-	$('.admin-form').click(function(){
-		$('.content-list').hide();
+	$('.content-list-button').click(function(){
+
+		$('.content-list').show();
+		$('.admin-form').hide();
+	});
+
+	$('.admin-form-button').click(function(){
 
 		$('.admin-form').show();
+		$('.content-list').hide();
 	});
+
 
 });
 

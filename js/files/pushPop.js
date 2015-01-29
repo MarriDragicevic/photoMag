@@ -23,7 +23,7 @@ $(function(){
 
       var l = location.href;
       var pageName = l.substring(l.lastIndexOf("/")+1);
-      pageName = pageName || "home";
+      pageName = pageName || "content-list";
 
 
 //Navbar kommer vara din meny 
