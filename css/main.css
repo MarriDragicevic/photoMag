@@ -11,11 +11,38 @@ body{
 	
 }
 
+/* Css to change bootstraps regular blue link color */
+.nav-pills {
+    color: #f7941d;
+}
+
+.nav-pills .active a{
+    color: #fff !important;
+    background-color: #f7941d !important;
+
+}
+
+.nav-pills > li > a {
+    color: #f7941d;
+
+}
+
+
+.content-list-button:active {
+	color: #f7941d;
+}
+
+.nav-pills > li > a:hover {
+    background-color: #f7941d;
+    color: #fff;
+}
+
 .form-control:focus {
   border-color: #ffd440;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
 }
 
+/* Css to change bootstraps regular blue link color STOP */
 
 .pageUrl {
 	margin-top: 10px;

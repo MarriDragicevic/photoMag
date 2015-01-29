@@ -30,7 +30,7 @@ $(function(){
 
       $('.control li').removeClass('active');
       $('.'+pageName+"-button").addClass('active');
-      $('main').children().hide();
+      $("main .row").children().not(".control").hide();
       $('.'+pageName).show();
     }
   }

@@ -5,6 +5,7 @@ $(function(){
 
 //Click-event between admin-form and  content-list
 	$('.control li').click(function(){
+		$("main .row").children().not(".control").hide();
 		$('.control li').addClass('active').not(this).removeClass('active');
 	});
 
@@ -20,7 +21,7 @@ $(function(){
 		$('.content-list').hide();
 	});
 //Click-event finished 
-	
+
 
 
 });

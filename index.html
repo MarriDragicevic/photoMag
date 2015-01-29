@@ -58,88 +58,88 @@
 
 
 
+	<main class="container">
+		<div class="row">
 
-	<!--**SIDEBAR**-->
-	
-		<section class="control row">
-			<section class="sidebar col-xs-10 col-sm-8 col-md-3 col-lg-3 col-xs-offset-1 col-sm-offset-2 col-md-offset-0 col-lg-offset-1">
-				<section class="panel panel-default">
-					<div class="panel-heading">
-						<h5 class="panel-title"> OPTIONS </h5>
-					</div>	
-					<div class="panel-body">
-						<ul class="nav nav-pills nav-stacked">
-							<li class="active content-list-button"><a href="content-list"> Edited contributions </a></li>
-							<li class="admin-form-button"><a href="admin-form">Administrative form </a></li>
-						</ul>
-					</div>
-				</section>
-			</section>				
-		</section>	
+		<!--**SIDEBAR**-->
+		
+			<section class="control">
+				<section class="sidebar col-xs-10 col-sm-8 col-md-3 col-lg-3 col-xs-offset-1 col-sm-offset-2 col-md-offset-0 col-lg-offset-0">
+					<section class="panel panel-default">
+						<div class="panel-heading">
+							<h5 class="panel-title"> OPTIONS </h5>
+						</div>	
+						<div class="panel-body">
+							<ul class="nav nav-pills nav-stacked">
+								<li class="active content-list-button"><a href="content-list"> Edited contributions </a></li>
+								<li class="admin-form-button"><a href="admin-form">Administrative form </a></li>
+							</ul>
+						</div>
+					</section>
+				</section>				
+			</section>	
+
+		<!--**CONTENT LIST (INLÄGG AV ADMIN)**-->
+
+			<section class="content-list">	
+				<section class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xs-offset-1 col-sm-offset-2 col-md-offset-0 col-lg-offset-0">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h5 class="panel-title"> All edited pages </h5>
+						</div>	
+						<table class="table table-hover"> 
+						 <tr class="pageTableHeads">
+							<th>Page ID: </th>
+							<th>Title: </th>
+							<th>Author: </th>
+							<th>Created: </th>
+						  </tr>
+					  </table>
+					</div> 
+				</section>				
+			</section> 	
+
+
+	<!--Admin form-->
+
+			<!--**ADMIN FORM** (Separera från conten-list)-->
+			<section class="admin-form col-xs-12 col-sm-12 col-md-7 col-lg-9 col-lg-offset-0"
+				<form class="form-horizontal">
+					<!--Put horizontal before form-group since the row will come automatically and it shall look wow -->
+						<div class="title col-sm-8 col-sm-offset-3 ">
+							<h2> Administer pages </h2>
+							<h5> Here you can edit content. </h5>
+						</div>
+						
+					  <div class="form-group">
+					    	<label for="inputTitle" class="col-sm-2 control-label">Page title: </label>
+					    <div class="col-sm-10">
+					      	<input type="text" class="pageTitle form-control" placeholder="Enter the page title here">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    	<label for="inputUrl" class="col-sm-2 control-label">Page URL: </label>
+					    <div class="col-sm-10">
+					     	<div class="input-group pageUrlGroup">
+			                  <span class="sideBox input-group-addon">
+			                    <input type="checkbox">
+			                  </span>
+			                  <input type="text" class="pageUrl form-control" placeholder="Enter page URL here">
+		                	</div>
+					    </div>
+					  </div>
+					  <div class="form-group">
+		              		<label class="col-sm-2 control-label" for="pageBody">Page Body: </label>
+		              <div class="col-sm-10">
+		                <textarea class="pageBody form-control" rows="10" placeholder="Enter the page body here" required></textarea>
+		              </div>
+		            </div>
+				
+				</form>
 		
 
-
-<!--"Edited contributions", (kalla på content list fungerade inte här -->
-		<!--**CONTENT LIST (INLÄGG AV ADMIN)**-->
-	<main class="container">
-		<section class="content-list row">	
-			<section class="col-xs-12 col-sm-12 col-md-8 col-lg-7 col-xs-offset-1 col-sm-offset-2 col-md-offset-0 col-lg-offset-1">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h5 class="panel-title"> All edited pages </h5>
-					</div>	
-					<table class="table table-hover"> 
-					 <tr class="pageTableHeads">
-						<th>Page ID: </th>
-						<th>Title: </th>
-						<th>Author: </th>
-						<th>Created: </th>
-					  </tr>
-				  </table>
-				</div> 
-			</section>				
-		</section> 	
-
-
-<!--Admin form-->
-
-		<!--**ADMIN FORM** (Separera från conten-list)-->
-		<section class="admin-form col-xs-12 col-sm-12 col-md-7 col-lg-7 col-lg-offset-1"
-			<form class="form-horizontal">
-				<!--Put horizontal before form-group since the row will come automatically and it shall look wow -->
-					<div class="title col-sm-8 col-sm-offset-3 ">
-						<h2> Administer pages </h2>
-						<h5> Here you can edit content. </h5>
-					</div>
-					
-				  <div class="form-group">
-				    	<label for="inputTitle" class="col-sm-2 control-label">Page title: </label>
-				    <div class="col-sm-10">
-				      	<input type="text" class="pageTitle form-control" placeholder="Enter the page title here">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    	<label for="inputUrl" class="col-sm-2 control-label">Page URL: </label>
-				    <div class="col-sm-10">
-				     	<div class="input-group pageUrlGroup">
-		                  <span class="sideBox input-group-addon">
-		                    <input type="checkbox">
-		                  </span>
-		                  <input type="text" class="pageUrl form-control" placeholder="Enter page URL here" disabled>
-	                	</div>
-				    </div>
-				  </div>
-				  <div class="form-group">
-	              		<label class="col-sm-2 control-label" for="pageBody">Page Body: </label>
-	              <div class="col-sm-10">
-	                <textarea class="pageBody form-control" rows="10" placeholder="Enter the page body here" required></textarea>
-	              </div>
-	            </div>
-			
-			</form>
-	
-
-		</section>
+			</section>
+		</div>
 
 	</main>
          
