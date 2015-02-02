@@ -8,6 +8,9 @@
  }
 
 
+
+// ** LÄS PÅ , NÄR DU FÖRSTÅR 1000% SÅ SKA DU TA BORT LUFTEN EMELLAN OCH GÖRA DET SNYGGT *** 
+ 
  	public function storeNewPage($page_data) {
 
  		$sql = "INSERT INTO pages(title, body, user_id) VALUES(:title, :body, :user_id)";
