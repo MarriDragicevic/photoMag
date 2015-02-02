@@ -8,7 +8,7 @@ $(function(){
 	//saveNewUrl ($url_data)
 	//addNewMenuLink ($menu_datas)
 
-	$(".admin-form").submit(function() {
+	$(".adminForm").submit(function() {
 		//define variabels before ajax kram
 
 		var pageData = {
