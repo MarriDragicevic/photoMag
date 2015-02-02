@@ -12,7 +12,17 @@
 
  		$sql = "INSERT INTO pages(title, body, user_id) VALUES(:title, :body, :user_id)";
 
- 		return $this->query($sql, $page_data);
+ 		$menu_data = $page_data["menuData"];
+
+ 		unset($page_data["menuData"]);
+
+		return $this->query($sql, $page_data);
+
+		$menu_data[":menu_link_path"] = $this->saveNewUrl($url_alias_path);
+
+		$this->addNewMenuLink($menu_datas);
+	
+
  		//DENNA sqlen 
  		//returnerar bara MEN...
 
@@ -40,15 +50,24 @@
 
  		//...Denna måste spara, därav ny variabel
  		//Path kommer bli din href i framtiden 
- 		//RETURN AFTER EVERY SQL YOU WHORE 
+ 		//RETURN AFTER EVERY SQL YOU W
 
  	}
 
- 	public function addNewMenuLink ($menu_data){
+ 	public function addNewMenuLink ($menu_datas){
+
+ 		$menu_link[":menu_link_menu"] = "my_menu_machine_name";
+ 		$sql = "INSERT INTO menu_links (title, path, menu) VALUES (:menu_link_title, :menu_link_path, :menu_link_menu)";
+
+ 		$menu_data = array(
+ 			":menu_link_title" => $menu_datas,
+ 			":menu_link_path" => $url_alias_path,
+ 			":menu_link_menu" => $menu_link
+ 			);
 
 
 
- 		//Kom innan klockan nio och gör klart detta din jävla kossa annars blir basti arg 
+ 		return $this->query($sql, $menu_datas);
 
 
  	}
