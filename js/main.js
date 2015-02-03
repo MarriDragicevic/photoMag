@@ -25,7 +25,7 @@ $(function(){
 			},
 
 			success : function(data) {
-				//saveNewUrl();
+				saveNewUrl();
 				console.log("Our first ajax call! It worked!!", data);
 			},
 
@@ -38,10 +38,65 @@ $(function(){
 
 	});
 
-/*
-function saveNewUrl(){
-		
-	};*/
+
+		function saveNewUrl(){
+
+			var pageUrlData = {
+
+				":path" : $(".pageUrl").val(),
+			};
+
+			$.ajax ({
+				url: "php/save_content.php",
+				dataType: "json",
+				data: {
+					"page_url" : pageUrlData
+				},
+
+				success : function(data) {
+					addNewMenuLink();
+					console.log("our second ajax call! It works!", data);
+				},
+
+				error : function(data) {
+					console.log("Our second ajax call doesnt work!! :(", data.responseText);
+				}
+
+			});
+			return false;
+		}
+
+		function addNewMenuLink(){
+
+			var pageMenuLinkData = {
+
+				":menu_link_title" : $(".inputMenuTitle").val(),
+				":menu_link_path" : $(".pageUrl").val(),
+				":menu_link_menu" : "my_menu_machine_name",
+			};
+
+			$.ajax ({
+				url: "php/save_content.php",
+				dataType: "json",
+				data: {
+					"page_menu_link" : pageMenuLinkData
+				},
+
+				success : function(data) {
+					console.log("Our third ajax call! It works!", data);
+				},
+
+				error : function(data) {
+					console.log("our third ajax call doesn't work! :(");
+				}
+
+			});
+			return false;
+
+		}
+
+
+
 
 
 });

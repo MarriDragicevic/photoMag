@@ -5,7 +5,6 @@
  	protected $user_info = array("user_id" => 1);
  	//Därför att den aldrig ska vara NULL
 
- }
 
 
 
@@ -13,25 +12,27 @@
  
  	public function storeNewPage($page_data) {
 
- 		$sql = "INSERT INTO pages(title, body, user_id) VALUES(:title, :body, :user_id)";
+ 		$page_data[":user_id"] = $this->user_info["user_id"];
 
  		$menu_data = $page_data["menuData"];
 
  		unset($page_data["menuData"]);
 
+ 		$sql = "INSERT INTO pages (title, body, user_id) VALUES (:title, :body, :user_id)";
+
 		return $this->query($sql, $page_data);
 
 		$menu_data[":menu_link_path"] = $this->saveNewUrl($url_alias_path);
 
-		$this->addNewMenuLink($menu_datas);
+		$this->addNewMenuLink($menu_data);
 	
-
+		
  		//DENNA sqlen 
  		//returnerar bara MEN...
 
  	}
 
- 	public function saveNewUrl ($url_data){
+ 	public function saveNewUrl($url_data){
 
  		$sql = "SELECT pid FROM pages ORDER BY created DESC LIMIT 1";
 
@@ -57,7 +58,7 @@
 
  	}
 
- 	public function addNewMenuLink ($menu_datas){
+ 	public function addNewMenuLink($menu_datas){
 
  		$menu_link[":menu_link_menu"] = "my_menu_machine_name";
  		$sql = "INSERT INTO menu_links (title, path, menu) VALUES (:menu_link_title, :menu_link_path, :menu_link_menu)";
@@ -75,7 +76,7 @@
 
  	}
 
-
+}
  	//skapa public funktion som du kallar på i inparameter från save_content 
  	// 
  //Döp det exakt efter det du ska använda det till för mindre komplikationer
