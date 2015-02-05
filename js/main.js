@@ -95,9 +95,60 @@ $(function(){
 
 		}
 
+		//Få ut från adminform till contentlist 
+		//Läs igenom denna noga
+		function getPages(){
+
+			$.ajax ({
+				url: "php/get_content.php",
+				dataType: "json",
+				data: {
+					"get_pages_data" : 1
+				},
+
+				success : function(data) {
+					console.log("we GOT the data", data);
+
+					for (i = 0; i < data.length; i++) {
+						var fillTableWithData = $("<tr/>");
+							fillTableWithData.data("pageTableData", data[i]); //skapande av ny sträng
 
 
+							fillTableWithData.append('<td><span class="badge">'+data[i].pid+"</span></td>");
+							fillTableWithData.append('<td>'+data[i].pageTitle+"</td>");
+							fillTableWithData.append('<td>'+data[i].author+"</td>");
+							fillTableWithData.append('<td>'+data[i].title+"</td>");
+							fillTableWithData.append('<td>'+data[i].path+"</td>");
+							fillTableWithData.append('<td>'+data[i].created+"</td>");
+						
+						$(".content-list table").append(fillTableWithData);
+
+					}
+
+				},
+
+				error : function(data) {
+					console.log("We DID NOT GET data", data.responseText);
+				}
+			});
+			return false;
+		}
 
 
 });
 
+/* //and build new table rows from data
+  for (var i = 0; i < data.length; i++) {
+    //create new table row
+    var newTableRow = $("<tr/>");
+    //append important page data to newTableRow
+    newTableRow.append('<td><span class="badge">'+data[i].pid+"</span></td>");
+    newTableRow.append('<td><strong>'+data[i].title+"</strong></td>");
+    newTableRow.append('<td>'+data[i].author+"</td>");
+    newTableRow.append('<td>'+data[i].created+"</td>");
+
+    //then append newTableRow to the #content-list table
+    $("#content-list table").append(newTableRow);
+  }
+}
+*/

@@ -5,7 +5,7 @@ $(function(){
 
 //Click-event between admin-form and  content-list
 	$('.sidebar li').click(function(){
-		$("main .row").children().not(".sidebar").hide();
+		$("main .row").children().not(".control").hide();
 		$('.sidebar li').addClass('active').not(this).removeClass('active');
 	});
 

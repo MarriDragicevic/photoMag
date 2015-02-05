@@ -34,7 +34,7 @@
 
  	public function saveNewUrl($url_data){
 
- 		$sql = "SELECT pid FROM pages ORDER BY created DESC LIMIT 1";
+ 		$sql = "SELECT pid, FROM pages ORDER BY created DESC LIMIT 1";
 
  		$new_pid = $this->query($sql);
 
@@ -58,7 +58,7 @@
 
  	}
 
- 	public function addNewMenuLink($menu_datas){
+ 	public function addNewMenuLink($menu_datas){//Inparameter för du SKAPAR data
 
  		$menu_link[":menu_link_menu"] = "my_menu_machine_name";
  		$sql = "INSERT INTO menu_links (title, path, menu) VALUES (:menu_link_title, :menu_link_path, :menu_link_menu)";
@@ -76,7 +76,21 @@
 
  	}
 
+
+ 	public function getPages(){
+
+ 		$sql = "SELECT pages.pid, pages.title AS pageTitle, CONCAT(users.fname,' ', users.lname) AS author, menu_links.title, url_alias.path, pages.created";
+
+ 		return $this->query($sql); 	
+
+ 	}
+
+
 }
  	//skapa public funktion som du kallar på i inparameter från save_content 
  	// 
  //Döp det exakt efter det du ska använda det till för mindre komplikationer
+
+
+
+
