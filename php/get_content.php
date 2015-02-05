@@ -6,5 +6,5 @@
 
 
 	if(isset($_REQUEST["get_pages_data"])) {
-	 	echo(json_encode($cq->getContent($_REQUEST["get_pages_data"])));//Du ska skapa EN NYYYYY inom ""
+	 	echo(json_encode($cq->getPages($_REQUEST["get_pages_data"])));//Du ska skapa EN NYYYYY inom ""
 	}
