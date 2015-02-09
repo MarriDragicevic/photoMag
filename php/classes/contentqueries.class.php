@@ -34,7 +34,7 @@
 
  	public function saveNewUrl($url_data){
 
- 		$sql = "SELECT pid, FROM pages ORDER BY created DESC LIMIT 1";
+ 		$sql = "SELECT pid FROM pages ORDER BY created DESC LIMIT 1";
 
  		$new_pid = $this->query($sql);
 
@@ -77,7 +77,7 @@
  	}
 
 
- 	public function getPages(){
+ 	public function getContent(){
 
  		$sql = "SELECT pages.pid, pages.title AS pageTitle, CONCAT(users.fname,' ', users.lname) AS author, menu_links.title, url_alias.path, pages.created
  		FROM pages, users, menu_links, url_alias

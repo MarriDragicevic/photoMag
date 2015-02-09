@@ -33,6 +33,7 @@ $(function(){
 					console.log("we GOT the data", data);
 
 				$(".content-list table tr").not(".pageTableHeads").remove();
+				//Om du clickar på edited contributions så det inte läggs på 
 
 
 				for (i = 0; i < data.length; i++) {
@@ -46,8 +47,8 @@ $(function(){
 							fillTableWithData.append('<td>'+data[i].title+"</td>");
 							fillTableWithData.append('<td>'+data[i].path+"</td>");
 							fillTableWithData.append('<td>'+data[i].created+"</td>");
-							fillTableWithData.append('<td><button class="btn btn-xs">'+"Edit"+"</button></td>");
-							fillTableWithData.append('<td><button class="btn btn-xs">'+"Trash"+"</button></td>");
+							fillTableWithData.append('<td><button class="edit-btn btn-xs">'+"Edit"+"</button></td>");
+							fillTableWithData.append('<td><button class="trash-btn btn-xs">'+"Trash"+"</button></td>");
 						
 						$(".content-list table").append(fillTableWithData);
 

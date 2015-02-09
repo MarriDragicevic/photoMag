@@ -44,22 +44,19 @@ body{
 
 /* Css to change bootstraps regular blue link color STOP */
 
-.btn-success{
+.btn-warning{
 	background-color: #f7941d;
 	color: #fff;
 	border: none;
 	margin: 20px;
 }
 
-.btn-success:hover {
+.btn-warning:hover {
     background-color: #f9993d;
     color: #fff;
 }
 
-.btn-success:active {
-	background-color: #f7941d;
-	color: #fff;
-}
+
 
 .pageUrl {
 	margin-top: 10px;
