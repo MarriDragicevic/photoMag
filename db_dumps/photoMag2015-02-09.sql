@@ -1,6 +1,6 @@
 -- phpMyAdmin SQL Dump
 -- version 4.2.0
--- http://www.phpmyadmin.net
+-- http://www.phpmyadmin.netphotoMag
 --
 -- Värd: localhost
 -- Tid vid skapande: 09 feb 2015 kl 14:28
@@ -82,15 +82,12 @@ CREATE TABLE IF NOT EXISTS `menu_links` (
   `menu` varchar(255) NOT NULL,
   `plid` int(11) DEFAULT NULL,
   `weight` int(11) DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=74 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Dumpning av Data i tabell `menu_links`
 --
 
-INSERT INTO `menu_links` (`mlid`, `title`, `path`, `menu`, `plid`, `weight`) VALUES
-(72, 'ö', 'ä', 'my_menu_machine_name', NULL, 0),
-(73, 'About us', 'About us', 'my_menu_machine_name', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -106,15 +103,13 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `user_id` int(11) NOT NULL,
   `video_id` int(11) DEFAULT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=83 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Dumpning av Data i tabell `pages`
 --
 
-INSERT INTO `pages` (`pid`, `title`, `body`, `img_id`, `user_id`, `video_id`, `created`) VALUES
-(81, 'å', '100 psykbryt\n', NULL, 1, NULL, '2015-02-09 13:56:16'),
-(82, 'This is my first page title', '100% psykbryt\nDid you know that if you answer this simple survey you can gain up to 99$!!!!!1', NULL, 1, NULL, '2015-02-09 13:57:24');
+
 
 -- --------------------------------------------------------
 
@@ -126,15 +121,11 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
 `aid` int(11) NOT NULL,
   `path` varchar(255) NOT NULL,
   `pid` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=56 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Dumpning av Data i tabell `url_alias`
 --
-
-INSERT INTO `url_alias` (`aid`, `path`, `pid`) VALUES
-(54, 'ä', 81),
-(55, 'About us', 82);
 
 -- --------------------------------------------------------
 
@@ -234,17 +225,17 @@ MODIFY `iid` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT för tabell `menu_links`
 --
 ALTER TABLE `menu_links`
-MODIFY `mlid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=74;
+MODIFY `mlid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT för tabell `pages`
 --
 ALTER TABLE `pages`
-MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=83;
+MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT för tabell `url_alias`
 --
 ALTER TABLE `url_alias`
-MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=56;
+MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT för tabell `users`
 --

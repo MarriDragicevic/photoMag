@@ -15,48 +15,68 @@
 		<script src="js/bootstrap.js"></script>
 		<script src="js/files/clickEvents.js"></script>
 		<script src="js/files/pushPop.js"></script>
+		<script src="js/files/menuMapping.js"></script>
 		<script src="js/main.js"></script>
+
 
 	</head>
 	<body>
+
+
+	
 		<!-- You're making the header a container bc it gives you the same padding as the rest of the content -->
 		<header class="container">
 			<section clas="row">
 				<div class="header"></div>
 
-		<!--***NAVBAR STARTS HERE***-->
-			<nav class="navbar navbar-default">
-			  <div class="container-fluid">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			      <!--Ska index.html så ist  för home? -->
-			      <a class="navbar-brand" href="home">PhotoMag. Administrative pages </a>
-			    </div>
-			 
-			    <!-- Collect the nav links, forms, and other content to look nice for cellphones -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      
-<!--Här ska du lägga ul-li nav-navbar från koden när du ska ha in det--> 
 
-			      <form class="navbar-form navbar-right" role="search">
-			        <div class="form-group">
-			          <input type="text" class="form-control" placeholder="Search">
-			        </div>
-			        <button type="submit" class="btn btn-default">Submit</button>
-			      </form>
-			    </div><!-- /.navbar-collapse -->
-			  </div><!-- /.container-fluid -->
-			</nav>
-		</section>
-	</header>	
-		<!--***NAVBAR FINISHED, Admin DOES NOT HAVE MENU LINKS***-->	
+				<nav class="navbar navbar-default">
+				  <div class="container-fluid">
+				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <div class="navbar-header">
+				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+				      <li class="home">
+				      	<a class="navbar-brand" href="home">PhotoMag. Admin pages </a>
+				  	  </li>
+				    </div>
 
+
+				    <!-- Collect the nav links, forms, and other content for toggling -->
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul class="nav navbar-nav">
+				        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+				        <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tutorials <span class="caret"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">One more separated link</a></li>
+				          </ul>
+				        </li>
+				        <li><a href="#">Cameras</a></li>
+				        <li><a href="#">Gallery</a></li>
+				      </ul>
+				      <form class="navbar-form navbar-right" role="search">
+				        <div class="form-group">
+				          <input type="text" class="form-control" placeholder="Search">
+				          <li class="admin-content nav navbar-nav navbar-right">
+				        	<a class="btn btn-default" href="admin-content" role="button">Admin</a>
+				          </li>
+				        </div>
+				        <button type="submit" class="btn btn-default">Submit</button>
+				      </form>
+				    </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+				</nav>
 
 
 	<main class="container">
@@ -151,7 +171,8 @@
 					</div>
 		            <div class="form-group">
               			<div class="col-sm-offset-2 col-sm-10">
-                			<button type="submit" class="btn btn-warning btn-lg">Save Page</button>
+                			<button type="submit" class="save-page btn btn-warning btn-lg">Save Page</button>
+                			<button type="submit" class="update-page btn btn-warning btn-lg">Update Page</button>
               			</div>
             		</div>	
 
@@ -160,9 +181,14 @@
 		
 
 			</section>
+
+			<section class="home">
+			</section>
 		</div>
 
 	</main>
+
+		<!--****ADMIN FORM, ADMIN FORM, ADMIN FORM****	--> 
          
 
 	</body>

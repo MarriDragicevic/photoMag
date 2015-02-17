@@ -1,39 +1,59 @@
-$(function(){
-// Start things up
-  function start(){
-    
-    onPopAndStart();
-    $(document).on("click","a",function(event){
-      event.preventDefault();
-      var thisHref = $(this).attr('href');
-      $('.'+thisHref).show();
-      console.log("thisHref: ",thisHref);
 
-      // Add the current "state/page" to our history
-      history.pushState(null,null,thisHref);
+function showContent(url) {
+  //Navbar kommer vara din meny 
 
-    });
+  $(".control").show();
 
-    // Add a pop state listener
-    // (listen to forward/backward buttons in the browser)
-    addEventListener("popstate",onPopAndStart);
-
-    // Run this function on popstate and initial load
-    function onPopAndStart(){
-
-      var l = location.href;
-      var pageName = l.substring(l.lastIndexOf("/")+1);
-      pageName = pageName || "content-list";
-
-
-//Navbar kommer vara din meny 
-
-      $('.control li').removeClass('active');
-      $('.'+pageName+"-button").addClass('active');
-      $("main .row").children().not(".control").hide();
-      $('.'+pageName).show();
-    }
+  if (url == "content-list") {
+    getContent();
+  } else if (url == "admin-content") {
+    getContent();
+    url = "content-list";
+  } else if (url != "admin-form") {
+    $(".control").hide();
   }
 
-  start();
-});
+  $('.control li').removeClass('active');
+  $('.'+url+"-button").addClass('active');
+  $("main .row").children().not(".control").hide();
+  $('.'+url).show();
+
+
+}
+
+
+
+function goToUrl(thisHref) {
+  showContent(thisHref);
+
+  // Add the current "state/page" to our history
+  history.pushState(null,null,thisHref);
+}
+
+
+// Start things up
+function start(){
+  onPopAndStart();
+  $(document).on("click","a",function(event){
+    event.preventDefault();
+    var thisHref = $(this).attr('href');
+    console.log("thisHref: ",thisHref);
+
+    goToUrl(thisHref);
+  });
+
+  // Add a pop state listener
+  // (listen to forward/backward buttons in the browser)
+  addEventListener("popstate",onPopAndStart);
+
+  // Run this function on popstate and initial load
+  function onPopAndStart(){
+
+    var l = location.href;
+    var pageName = l.substring(l.lastIndexOf("/")+1);
+    pageName = pageName || "home";
+
+
+    showContent(pageName);
+  }
+}

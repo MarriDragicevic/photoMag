@@ -11,6 +11,13 @@ body{
 	
 }
 
+nav ul{
+ text-decoration: none;
+ display: inline-block;
+}
+
+
+
 /* Css to change bootstraps regular blue link color */
 .nav-pills {
     color: #f7941d;
@@ -69,4 +76,7 @@ body{
 
 .sidebox{
 	margin-top: 10px;
+}
+.admin-content {
+	margin-left: 5px;
 }
