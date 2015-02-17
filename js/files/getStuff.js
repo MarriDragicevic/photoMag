@@ -38,19 +38,9 @@ function getContent(){
 		},
 
 		error : function(data) {
-			console.log("We DID NOT GET data", data.responseText);
+			console.log("getContent", data.responseText);
 		}
 	});
 
 }
 
-function getMenuLinks() {
-
-	$.ajax({
-		url: "php/get_content.php",
-		dataType: "json",
-		data: {
-			"get_menu_links_data" : 1 //För vi ska inte göra en variabel, vi ska inte spara, vi ska hämta? 
-		}
-	});
-}

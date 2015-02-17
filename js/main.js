@@ -103,3 +103,20 @@ $(function(){
 
 });
 
+
+function getMenuLinks() {
+
+	$.ajax({
+		url: "php/get_content.php",
+		dataType: "json",
+		//Ingen data, då du enbart echoar och inte requestar 
+		success: function(data){
+			console.log("getMenuLinks success: ", data);
+		},
+
+		error: function(data) {
+			console.log("it doesnt work f**ck you", data.responseText);
+		}
+	});
+	return false;
+}

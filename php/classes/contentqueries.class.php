@@ -89,6 +89,14 @@
  	}
 
 
+ 	public function getMenuLinks(){
+ 		$sql = "SELECT * FROM menu_links";
+
+ 		return $this->query($sql);
+ 	}
+
+
+
 }
  	//skapa public funktion som du kallar på i inparameter från save_content 
  	// 

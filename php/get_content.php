@@ -10,4 +10,4 @@ if(isset($_REQUEST["get_pages_data"])) {
 }
 
 //GETMENUDATA
-	echo(json_encode($->getMenuLinks()));
+	echo(json_encode($cq->getMenuLinks()));
