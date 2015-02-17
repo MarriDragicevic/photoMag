@@ -9,5 +9,3 @@ if(isset($_REQUEST["get_pages_data"])) {
  	echo(json_encode($cq->getContent()));//Du ska skapa EN NYYYYY inom ""
 }
 
-//GETMENUDATA
-	echo(json_encode($cq->getMenuLinks()));

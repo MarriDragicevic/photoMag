@@ -1,14 +1,10 @@
 
-//DOM READY 
-
-$(function(){
-
 
 //Skapa (funktion sen i den) variabel menu tree (returnera i, stoppa in resultat)
 // Curly brackets, en ny variabel, ska va tomma nya objekt som kommer fyllas med saftiga bounty såser 
 //Skapa nytt object som lagrar i raden hash
 
- function buildMenuTree (menuLinkData){
+ function buildMenuTree(menuLinkData){
 		var menuTree = [];
 		var hash = {};
 
@@ -25,7 +21,7 @@ $(function(){
 //children, som är en array. Nu ska alla länkar ha en children array
 //HÄR ska du göra alla unika "trycka in dina favoriter"
 	menuLinkData.forEach(function(menuTreeArray){
-		menuLinkData.children = [];
+		menuTreeArray.children = [];
 //peka på mlid, lär dig syntaxen
 		hash["_"+menuTreeArray.mlid] = menuTreeArray;
 //Fortfarande inget träd, vi går än genom MenuData som vi skapar 
@@ -67,4 +63,3 @@ $(function(){
 
 
 
-});

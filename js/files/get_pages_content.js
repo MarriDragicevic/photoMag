@@ -17,7 +17,7 @@ function getContent(){
 			//Om du clickar på edited contributions så det inte läggs på 
 
 
-			for (i = 0; i < data.length; i++) {
+			for (var i = 0; i < data.length; i++) {
 				var fillTableWithData = $("<tr/>");
 					fillTableWithData.data("pageTableData", data[i]); //skapande av ny sträng
 
@@ -43,4 +43,19 @@ function getContent(){
 	});
 
 }
+
+ function getMenuLinks(){
+	$.ajax({
+		url: "php/get_menu_content.php",
+		dataType: "json",
+		success : function(data) {
+			console.log("getMenuLinks", data);
+			buildMenuTree(data);
+		},
+		error : function(data) {
+			console.log("getMenuLinks", data.responseText);
+		}
+
+	});
+ }
 

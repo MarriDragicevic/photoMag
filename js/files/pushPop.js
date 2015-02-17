@@ -6,8 +6,10 @@ function showContent(url) {
 
   if (url == "content-list") {
     getContent();
+    getMenuLinks();
   } else if (url == "admin-content") {
     getContent();
+    getMenuLinks();
     url = "content-list";
   } else if (url != "admin-form") {
     $(".control").hide();
