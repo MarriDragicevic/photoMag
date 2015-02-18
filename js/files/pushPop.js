@@ -10,7 +10,11 @@ function showContent(url) {
   } else if (url == "admin-content") {
     getContent();
     getMenuLinks();
+
     url = "content-list";
+  } else if (url == "admin-form"){
+    getContent();
+    getMenuLinks();
   } else if (url != "admin-form") {
     $(".control").hide();
   }

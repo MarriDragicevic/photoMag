@@ -14,7 +14,42 @@ function createMenuSelect(data) {
 
 	$(".adminForm .menuSelect").html(select_html);
 	console.log("Jag har ont i magen");
+//0 - Vi måste börja någonstans, börja räkna arrayen någonstans
+	select_html = buildMenuSelect(select_html, menuTree, 0);
 
+}
+
+function buildMenuSelect(select_html, menuItemDatas, level) {
+	//bygger alla options och framtida options rekursivt
+	//menuitemData är alla menu_links som någonsin skapats
+	//Level är både föräldrar och barn (nivå)
+	//Håll koll på S i menuItemDatas
+	
+	for (var i = 0; i < menuItemDatas.length; i++) {
+		var levelDepth = "-";
+		//För varje barn jag skapar, kommer jag få ett extra streck
+
+		for (var j = 0; j < level; j++) {
+			levelDepth += "-";
+		}
+
+		//Vi måste plocka varendastaste mlid från menu_links för att ingen ska bli undefined 
+
+		var subOptions = $('<option value="'+menuItemDatas[i].mlid+'">'+levelDepth+" "+menuItemDatas[i].title+'</option>');
+
+		//lägger till all data för menuItem
+		subOptions.data("menuItemData", menuItemDatas[i]);
+		//append this shiad
+		select_html.append(subOptions);
+
+		//Vi ska göra en if-sats nu
+		if(menuItemDatas[i].children.length > 0){
+			select_html = buildMenuSelect(select_html, menuItemDatas[i].children, level+1);
+
+		}
+
+
+	}
 	return select_html;
 }
 
@@ -89,3 +124,4 @@ function createMenuSelect(data) {
 /*** HASH TREE STop ***/
 
 /*** BUILDING MENU ***/
+//level är en inparameter du skapar här för att 
