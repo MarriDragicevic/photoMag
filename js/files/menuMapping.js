@@ -1,4 +1,27 @@
+/**SELECTS**/
 
+function createMenuSelect(data) {
+
+	var menuTree = buildMenuTree(data);
+
+	//Make a bootstrap form control
+	var select_html = $('<select class="form-control" />');
+	//Make 
+	var topOption = $("<option> Top </option>");
+
+	topOption.data("menuItemData", {mlid: null, menu: "my_menu_machine_name"});
+	select_html.append(topOption);
+
+	$(".adminForm .menuSelect").html(select_html);
+	console.log("Jag har ont i magen");
+
+	return select_html;
+}
+
+/** SELECTS STOP **/
+
+
+/*** HASH TREE START ***/
 
 //Skapa (funktion sen i den) variabel menu tree (returnera i, stoppa in resultat)
 // Curly brackets, en ny variabel, ska va tomma nya objekt som kommer fyllas med saftiga bounty såser 
@@ -51,10 +74,6 @@
 
 	return menuTree;
 
-
-}
-
-
 	
 //Hash har nu objektnycklar sparade 
 //Kollar de som inte är på top nivå 
@@ -63,3 +82,10 @@
 
 
 
+
+
+}
+
+/*** HASH TREE STop ***/
+
+/*** BUILDING MENU ***/

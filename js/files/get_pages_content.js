@@ -13,7 +13,7 @@ function getContent(){
 		success : function(data) {
 			console.log("we GOT the data", data);
 
-			$(".content-list table tr").not(".pageTableHeads").remove();
+			$(".content-list table tr").not(".pageTableHeads").remove(); //Append lägger till, så have remove så att dubletter inte sker 
 			//Om du clickar på edited contributions så det inte läggs på 
 
 
@@ -49,8 +49,9 @@ function getContent(){
 		url: "php/get_menu_content.php",
 		dataType: "json",
 		success : function(data) {
+
 			console.log("getMenuLinks", data);
-			buildMenuTree(data);
+			createMenuSelect(data);
 		},
 		error : function(data) {
 			console.log("getMenuLinks", data.responseText);
