@@ -1,22 +1,26 @@
 
 function showContent(url) {
-  //Navbar kommer vara din meny 
+ 
 
   $(".control").show();
+  getMenuLinks(createMenu);
 
   if (url == "content-list") {
     getContent();
-    getMenuLinks();
+    getMenuLinks(createMenuSelect);
   } else if (url == "admin-content") {
     getContent();
-    getMenuLinks();
+    getMenuLinks(createMenuSelect);
 
     url = "content-list";
   } else if (url == "admin-form"){
     getContent();
-    getMenuLinks();
+    getMenuLinks(createMenuSelect);
   } else if (url != "admin-form") {
     $(".control").hide();
+  } else if (url == "home") {
+    $("admin-content").hide();
+    $("home").show();
   }
 
   $('.control li').removeClass('active');

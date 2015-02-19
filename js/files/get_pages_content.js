@@ -44,14 +44,12 @@ function getContent(){
 
 }
 
- function getMenuLinks(){
+ function getMenuLinks(successFunc){
 	$.ajax({
 		url: "php/get_menu_content.php",
 		dataType: "json",
 		success : function(data) {
-
-			console.log("getMenuLinks", data);
-			createMenuSelect(data);
+			successFunc(data);
 		},
 		error : function(data) {
 			console.log("getMenuLinks", data.responseText);

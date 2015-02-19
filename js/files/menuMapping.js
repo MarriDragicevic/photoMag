@@ -14,8 +14,8 @@ function createMenuSelect(data) {
 
 	$(".adminForm .menuSelect").html(select_html);
 	console.log("Jag har ont i magen");
-//0 - Vi måste börja någonstans, börja räkna arrayen någonstans
-	select_html = buildMenuSelect(select_html, menuTree, 0);
+	//0 - Vi måste börja någonstans, börja räkna arrayen någonstans
+	buildMenuSelect(select_html, menuTree, 0);
 
 }
 
@@ -125,3 +125,34 @@ function buildMenuSelect(select_html, menuItemDatas, level) {
 
 /*** BUILDING MENU ***/
 //level är en inparameter du skapar här för att 
+//Första funktionen ska hämta ut träd och sätta på rätt plats
+//Sen ska jag loopa att få ut föräldrar och barn 
+//
+
+function createMenu(data) {
+	var menuTree = buildMenuTree(data);
+	var menuHtml = $('<ul class="nav navbar-nav"/>');
+
+	buildMenu(menuHtml, menuTree);
+
+	$("header nav .navbar-collapse .navbar-nav").remove();
+	$("header nav .navbar-collapse").prepend(menuHtml);
+}
+
+function buildMenu(menuUl, menuLinksArray) {
+	menuLinksArray.forEach(function(linkObject) {
+		var linkHtml = $('<li><a href="'+linkObject.path+'">'+linkObject.title+'</a></li>');
+
+		if (linkObject.children.length > 0) {
+			linkHtml.addClass("dropdown");
+			var dropdown = $('<ul class="dropdown-menu"/>');
+			buildMenu(dropdown, linkObject.children);
+
+			linkHtml.append(dropdown);
+		}
+
+		menuUl.append(linkHtml);
+	});
+}
+
+/** BUILD MENU STOP **/
