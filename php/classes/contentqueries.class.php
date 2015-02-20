@@ -96,7 +96,17 @@
  	}
 
 
- 	public function get
+ 	public function getCreatedPages($url_data_info){
+ 		$sql = "SELECT pid FROM url_alias WHERE path = :path";
+ 		$url_paths = array(":path" => $url_data_info);
+ 		$url_path_info = $this->query($sql, $url_paths);
+ 		
+ 		$sql2 ="SELECT * FROM pages WHERE pid = :pid";
+ 		$page_info = array(":pid" => $url_path_info[0]["pid"]);
+
+
+ 		return $this->query($sql2, $page_info);
+ 	}
 
 }
  	//skapa public funktion som du kallar på i inparameter från save_content 

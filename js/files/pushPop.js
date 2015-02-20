@@ -1,6 +1,5 @@
 
 function showContent(url) {
- 
 
   $(".control").show();
   getMenuLinks(createMenu);
@@ -21,13 +20,22 @@ function showContent(url) {
   } else if (url == "home") {
     $("admin-content").hide();
     $("home").show();
-  } else if (url != "home" && url != "admin-content") {
-    $.ajax {
-      url: "get_created_pages.php",
-      dataType: "json",
-      data: 
-        
-    }
+  } else if (url != "home" && url != "admin-content" && url != "content-list" && url != "admin-form") {
+      $.ajax ({
+        url: "php/get_created_pages.php",
+        dataType: "json",
+        data: {
+          "get_created_page_data" : url
+        },
+        success:function(data){
+          console.log("det funkilerar att nå dej ", data);
+        },
+        error:function(data){
+          console.log("det funkilerar -ICKE- att nå dej", data.responseText);
+        }
+      });
+
+      url = "showMadePage";
   }
 
   $('.control li').removeClass('active');
