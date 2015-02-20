@@ -96,6 +96,7 @@
  	}
 
 
+ 	public function get
 
 }
  	//skapa public funktion som du kallar på i inparameter från save_content 

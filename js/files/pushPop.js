@@ -21,6 +21,13 @@ function showContent(url) {
   } else if (url == "home") {
     $("admin-content").hide();
     $("home").show();
+  } else if (url != "home" && url != "admin-content") {
+    $.ajax {
+      url: "get_created_pages.php",
+      dataType: "json",
+      data: 
+        
+    }
   }
 
   $('.control li').removeClass('active');
@@ -67,3 +74,5 @@ function start(){
     showContent(pageName);
   }
 }
+
+
