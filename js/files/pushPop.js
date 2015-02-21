@@ -4,23 +4,31 @@ function showContent(url) {
   $(".control").show();
   getMenuLinks(createMenu);
 
+  console.log("Jag är en url ",url);
+
   if (url == "content-list") {
     getContent();
     getMenuLinks(createMenuSelect);
+
   } else if (url == "admin-content") {
     getContent();
     getMenuLinks(createMenuSelect);
-
     url = "content-list";
+
   } else if (url == "admin-form"){
     getContent();
     getMenuLinks(createMenuSelect);
-  } else if (url != "admin-form") {
-    $(".control").hide();
-  } else if (url == "home") {
+  }
+
+   else if (url == "home") {
     $("admin-content").hide();
     $("home").show();
+    $(".control").hide();
+
   } else if (url != "home" && url != "admin-content" && url != "content-list" && url != "admin-form") {
+      console.log("Hej jag tänkte köra lite AJAX");
+      $(".control").hide();
+
       $.ajax ({
         url: "php/get_created_pages.php",
         dataType: "json",
@@ -29,6 +37,12 @@ function showContent(url) {
         },
         success:function(data){
           console.log("det funkilerar att nå dej ", data);
+          $(".showMadePage").html("");
+         $(".showMadePage").append('<article class="fillPageWithData"></article>');
+         $(".showMadePage").show();
+         //Appenda in i din article
+         $(".fillPageWithData").append('<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">'+data[0]["title"]+'</h3></div><div class="panel-body">'+data[0]["body"]+'</div></div>');
+
         },
         error:function(data){
           console.log("det funkilerar -ICKE- att nå dej", data.responseText);
