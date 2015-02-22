@@ -19,6 +19,34 @@ function createMenuSelect(data) {
 
 }
 
+// skapa select för att kunna välja bilder för dina pages
+function createImagesSelect (data) {
+  var selectImgInHtml = $("<select class='form-control'></select>");
+
+  var imgSelectTop = $("<option>Select picture</option>");
+
+  imgSelectTop.data("imgData", {iid: null});
+  selectImgInHtml.append(imgSelectTop);
+
+  buildImgOptions(selectImgInHtml, data);
+
+  $(".pageForm .imgSelect").html(selectImgInHtml);
+}
+
+function buildImgOptions (selectImgInHtml, data) {
+  for (var i = 0; i < data.length; i++) {
+      var imgOptions = $('<option value="'+data[i].iid+'">'+" "+data[i].title+'</option>');
+
+      imgOptions.data("imgData", data[i]);
+
+      selectImgInHtml.append(imgOptions);
+  }
+  return selectImgInHtml;
+
+}
+
+
+
 function buildMenuSelect(select_html, menuItemDatas, level) {
 	//bygger alla options och framtida options rekursivt
 	//menuitemData är alla menu_links som någonsin skapats

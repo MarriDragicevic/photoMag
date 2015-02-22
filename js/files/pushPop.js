@@ -1,6 +1,6 @@
 
 function showContent(url) {
-  
+
 
   $(".control").show();
   getMenuLinks(createMenu);
@@ -43,7 +43,11 @@ function showContent(url) {
          $(".showMadePage").append('<article class="fillPageWithData"></article>');
          $(".showMadePage").show();
          //Appenda in i din article
-         $(".fillPageWithData").append('<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">'+data[0]["title"]+'</h3></div><div class="panel-body">'+data[0]["body"]+'</div></div>');
+
+         
+        $(".fillPageWithData").append('<div class="panel panel-default"><div class="panel-heading"><h1 class="panel-title">'+data[0]["title"]+'</h1></div>'+ '<div class="panel panel-body"><p>'+data[0]["body"]+'</p>'+'<img src="img/'+data[0]["img_id"][0]["path"]+'" class="img-responsive"></div></div>');
+
+
 
         },
         error:function(data){

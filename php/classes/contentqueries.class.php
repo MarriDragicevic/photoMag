@@ -120,6 +120,12 @@
 		return $this->query($sql);
 	}
 
+	getImages() {
+		$sql = "SELECT * FROM images"
+
+		return $this->query($sql);
+	}
+
 }
 
 
