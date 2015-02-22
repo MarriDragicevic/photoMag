@@ -77,8 +77,10 @@ $(function(){
 			":menu_link_title" : $(".inputMenuTitle").val(),
 			":menu_link_path" : $(".pageUrl").val(),
 			":menu_link_menu" : "my_menu_machine_name",
+			":menu_link_plid" : $("select option:selected").val(),
 		};
 
+	console.log("HEJHEJHEJ", pageMenuLinkData);
 		$.ajax ({
 			url: "php/save_content.php",
 			dataType: "json",

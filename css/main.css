@@ -1,5 +1,5 @@
 body{
-	background-color: #ffffff;
+	background-color: #fff;
 }
 
 .header {
@@ -98,7 +98,9 @@ nav ul{
 	margin-top: 10px;
 }
 .admin-content {
-	margin-left: 5px;
+  margin-top: 3px;
+  padding-right: 5px;
+  display: inline-block;
 }
 
 .img-holder{
