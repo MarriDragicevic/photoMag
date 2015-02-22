@@ -78,6 +78,7 @@ $(function(){
 			":menu_link_path" : $(".pageUrl").val(),
 			":menu_link_menu" : "my_menu_machine_name",
 			":menu_link_plid" : $("select option:selected").val(),
+			":menu_link_weight" : $(".inputMenuWeight").val(),
 		};
 
 	console.log("HEJHEJHEJ", pageMenuLinkData);

@@ -61,15 +61,17 @@
  	public function addNewMenuLink($menu_datas){//Inparameter för du SKAPAR data
 
  		$menu_link[":menu_link_menu"] = "my_menu_machine_name";
- 		$sql = "INSERT INTO menu_links (title, path, menu, plid, weight) VALUES (:menu_link_title, :menu_link_path, :menu_link_menu, :menu_link_plid, :menu_link_weight)";
+ 		$sql = "INSERT INTO menu_links (title, path, menu, plid weight) VALUES (:menu_link_title, :menu_link_path, :menu_link_menu, :menu_link_plid, :menu_link_weight)";
 
- 		$menu_data = array(
- 			":menu_link_title" => $menu_datas,
- 			":menu_link_path" => $url_alias_path,
- 			":menu_link_menu" => $menu_link,
- 			":menu_link_plid" => $menu_datas,
- 			":menu_link_weight" => $menu_datas
- 			);
+ 		$menu_datas[":menu_link_weight"] = (int) $menu_datas[":menu_link_weight"];
+
+ 		// $menu_data = array(
+ 		// 	":menu_link_title" => $menu_datas,
+ 		// 	":menu_link_path" => $url_alias_path,
+ 		// 	":menu_link_menu" => $menu_link,
+ 		// 	":menu_link_plid" => $menu_datas,
+ 		// 	":menu_link_weight" => $menu_datas
+ 		// 	);
 
 
 
