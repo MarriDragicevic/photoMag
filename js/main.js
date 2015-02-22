@@ -99,6 +99,7 @@ $(function(){
 
 	}
 
+getFooterInfo();
 
 
 });
