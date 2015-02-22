@@ -58,3 +58,33 @@ function getContent(){
 	});
  }
 
+
+ function getFooterInfo(){
+
+	$.ajax({
+		url: "php/get_footer_content.php",
+		dataType: "json",
+		success : function(data) {
+		console.log("getFooterInfo DID WORK", data);
+			for (var i = 0; i < data.length; i++) {
+				var footerInfo = $('<p class="footerContent"/>');
+
+				footerInfo.append("<p> Name: "+data[i].name+"<p>");
+				footerInfo.append("<p> Street :"+data[i].street+"<p>");
+				footerInfo.append("<p> Postal Code: "+data[i].postalcode+"<p>");
+				footerInfo.append("<p> City: "+data[i].city+"<p>");
+				footerInfo.append("<p> Phone: "+data[i].phone+"<p>");
+				footerInfo.append("<p> E-mail :"+data[i].email+"<p>");
+				footerInfo.append("<p> Info: "+data[i].info+"<p>");
+
+
+			$("footer .footerInfo").append(footerInfo);
+				
+			}
+		},
+		error : function(data) {
+			console.log("getFooterInfo DID NOT WORK", dataResponseText);
+		}
+	});
+	return false;
+}

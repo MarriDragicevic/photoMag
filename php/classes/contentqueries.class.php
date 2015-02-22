@@ -108,7 +108,20 @@
  		return $this->query($sql2, $page_info);
  	}
 
+ 	
+	public function getFooterInfo(){
+		$sql = "SELECT * FROM footer";
+
+		return $this->query($sql);
+	}
+
 }
+
+
+
+	
+	
+
  	//skapa public funktion som du kallar på i inparameter från save_content 
  	// 
  //Döp det exakt efter det du ska använda det till för mindre komplikationer

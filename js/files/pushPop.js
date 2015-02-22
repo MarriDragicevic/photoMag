@@ -1,5 +1,6 @@
 
 function showContent(url) {
+  
 
   $(".control").show();
   getMenuLinks(createMenu);
@@ -24,6 +25,7 @@ function showContent(url) {
     $("admin-content").hide();
     $("home").show();
     $(".control").hide();
+
 
   } else if (url != "home" && url != "admin-content" && url != "content-list" && url != "admin-form") {
       console.log("Hej jag tänkte köra lite AJAX");
