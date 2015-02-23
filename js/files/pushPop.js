@@ -2,8 +2,10 @@
 function showContent(url) {
 
 
-  $(".control").show();
+    $(".control").show();
   getMenuLinks(createMenu);
+  getImages(url);
+
 
   console.log("Jag är en url ",url);
 

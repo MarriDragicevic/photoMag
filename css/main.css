@@ -108,20 +108,9 @@ nav ul{
 	padding-bottom: 35px;
 }
 
-.leftBox{
-	float: left;
-	border: solid black 1px;
-	width: 545px;
-	
+.footerInfo{
+	display: inline-block;
 }
-
-.rightBox{
-	float: right;
-	border: solid black 1px;
-	width: 545px;
-
-}
-
 .clear{
 	clear: both;
 }

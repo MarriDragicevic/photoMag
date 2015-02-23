@@ -19,6 +19,7 @@ function createMenuSelect(data) {
 
 }
 
+
 // skapa select för att kunna välja bilder för dina pages
 function createImagesSelect (data) {
   var selectImgInHtml = $("<select class='form-control'></select>");
@@ -44,6 +45,7 @@ function buildImgOptions (selectImgInHtml, data) {
   return selectImgInHtml;
 
 }
+
 
 
 
